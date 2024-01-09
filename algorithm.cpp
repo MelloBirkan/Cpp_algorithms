@@ -4,8 +4,9 @@
 
 #include "algorithm.h"
 #include <vector>
-// How to set up two pointers in an array
+#include <cmath>
 
+// How to set up two pointers in an array
 void TwoPointers(std::vector<int> array){
     int left = 0;
     int right = array.size() - 1;
@@ -14,9 +15,6 @@ void TwoPointers(std::vector<int> array){
         right = right -1;
     }
 }
-
-// Template function that calculates the sum of squared digits.
-#include <cmath>
 
 int SumOfSquaredDigits(int number)
 {
@@ -28,4 +26,28 @@ int SumOfSquaredDigits(int number)
         totalSum += digit * digit;
     }
     return totalSum;
+}
+
+int PowerRecursive(int base , int exponent ) {
+    if (exponent == 0) {
+        return 1;
+    }
+    return base * power(base, exponent - 1);
+}
+
+int count_digits(int number) {
+    if (number <= 9 && number >= -9 ) {
+        return 1;
+    }
+    return 1 + count_digits(number / 10);
+}
+
+int fibonacci(int n) {
+    if (n == 0) {
+        return 0;
+    } else if (n == 1) {
+        return 1;
+    } else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
 }
