@@ -28,11 +28,11 @@ int SumOfSquaredDigits(int number)
     return totalSum;
 }
 
-int PowerRecursive(int base , int exponent ) {
+int Power(int base , int exponent ) {
     if (exponent == 0) {
         return 1;
     }
-    return base * power(base, exponent - 1);
+    return base * Power(base, exponent - 1);
 }
 
 int count_digits(int number) {
@@ -50,4 +50,13 @@ int fibonacci(int n) {
     } else {
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
+}
+
+int* Left_rotate(int arr[], int size) {
+  int first = arr[0];
+  for (int i = 0; i < size; ++i) {
+    arr[i] = arr[i + 1];
+  }
+  arr[size - 1] = first;
+  return arr;
 }
